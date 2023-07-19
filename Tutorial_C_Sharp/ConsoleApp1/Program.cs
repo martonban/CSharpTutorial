@@ -8,42 +8,34 @@ namespace Tutorial_C_Sharp
     class Program {
         static void Main(string[] args)
         {
-            Human human1 = new Human("Rick", 65);
-            Human human2 = new Human("Morty", 16);
-
-            human1.Eat();
-            human1.Sleep();
-
-            human2.Eat();
-            human2.Sleep();
-
             Console.ReadKey();
         }
     }
 
+    class Vehicle
+    {
+        public int speed = 0;
 
-
-    class Human {
-
-        public String name;
-        public int age;
-
-
-        public Human(string name, int age)
+        public void go()
         {
-            this.name = name;
-            this.age = age;
+            Console.WriteLine("This vehicle is moving!");
         }
-
-        public void Eat() {
-            Console.WriteLine(name + " is eating");
-        }
-
-        public void Sleep()
-        {
-            Console.WriteLine(name + " is sleeping");
-        }
-    
     }
 
+
+    class Car : Vehicle {
+
+        public int wheels = 4;
+    }
+
+
+    class Bicycle : Vehicle
+    {
+        public int wheels = 2;
+    }
+
+    class Boat : Vehicle
+    {
+        public int wheels = 0;
+    }
 }
