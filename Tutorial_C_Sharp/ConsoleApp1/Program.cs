@@ -9,19 +9,19 @@ namespace Tutorial_C_Sharp
         static void Main(string[] args)
         {
 
-            double a = 3.14;
-            int b = Convert.ToInt32(a);
+            Random random = new Random();
 
-            Console.WriteLine(b);
-            Console.WriteLine(a.GetType());
+            // Random Int
+            random.Next();
 
-            int c = 123;
-            double d = Convert.ToDouble(c) + 0.1;
+            // Random int between parameters
+            random.Next(1, 7);
 
-            Console.WriteLine(d);
+            // Random Double 0-1
+            double rnd = random.NextDouble();
 
+            Console.WriteLine(rnd);
             Console.ReadKey();
-            
         }
     }
 }
