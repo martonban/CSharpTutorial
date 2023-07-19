@@ -8,34 +8,41 @@ namespace Tutorial_C_Sharp
     class Program {
         static void Main(string[] args)
         {
+            Dog dog = new Dog();
+            Cat cat= new Cat();
+
+            dog.Speak();
+            cat.Speak();
+
+
             Console.ReadKey();
         }
     }
 
-    class Vehicle
+    class Animal
     {
-        public int speed = 0;
-
-        public void go()
-        {
-            Console.WriteLine("This vehicle is moving!");
+        // Every function which I want to overriding need to be vitual!!!
+        // or abstruct but the class need to be abstract to
+        public virtual void Speak() {
+            Console.WriteLine("The animal goes *brrr*");
         }
     }
 
 
-    class Car : Vehicle {
+    class Dog : Animal {
 
-        public int wheels = 4;
+        public override void Speak()
+        {
+            Console.WriteLine("WOOF");
+        }
     }
 
-
-    class Bicycle : Vehicle
+    class Cat : Animal
     {
-        public int wheels = 2;
-    }
 
-    class Boat : Vehicle
-    {
-        public int wheels = 0;
+        public override void Speak()
+        {
+            Console.WriteLine("MEOW");
+        }
     }
 }
