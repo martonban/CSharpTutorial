@@ -2,33 +2,45 @@
 using ConsoleApp1;
 using System;
 using System.ComponentModel;
-using System.Collections.Generic;
 
+using System.Collections.Generic;
 namespace Tutorial_C_Sharp
 {
     class Program {
         static void Main(string[] args)
         {
-            List<String> food = new List<String>();
+            Car car = new Car(400);
 
-            food.Add("pizza");
-            food.Add("hamburger");
-            food.Add("hot-dog");
+            car.Speed = 1000000;
 
-            //food.Remove("pizza");
-            //food.Insert(0, "sushi");
-            //int i = food.Count;
-            //int i = food.IndexOf("pizza");
-            //bool t = food.Contains("pizza");
-            //food.Sort();
-            //food.Reverse();
-            //food.Clear();
-            String[] foodArray = food.ToArray();
+            Console.WriteLine(car.Speed);
 
             Console.ReadKey();
         }
     }
 
+    class Car
+    {
+        private int speed;
 
+        public Car(int speed)
+        {
+            Speed = speed;
+        }
+
+        public int Speed {
+            get { return speed; }   // read
+            set {
+                if (value > 500)
+                {
+                    speed = 500;
+                }
+                else { 
+                    speed = value;
+                }  
+            }  
+        }
+
+    }
 
 }
