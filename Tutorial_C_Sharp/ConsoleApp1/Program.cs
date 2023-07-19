@@ -2,47 +2,33 @@
 using ConsoleApp1;
 using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace Tutorial_C_Sharp
 {
     class Program {
         static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            Cat cat= new Cat();
+            List<String> food = new List<String>();
 
-            dog.Speak();
-            cat.Speak();
+            food.Add("pizza");
+            food.Add("hamburger");
+            food.Add("hot-dog");
 
+            //food.Remove("pizza");
+            //food.Insert(0, "sushi");
+            //int i = food.Count;
+            //int i = food.IndexOf("pizza");
+            //bool t = food.Contains("pizza");
+            //food.Sort();
+            //food.Reverse();
+            //food.Clear();
+            String[] foodArray = food.ToArray();
 
             Console.ReadKey();
         }
     }
 
-    class Animal
-    {
-        // Every function which I want to overriding need to be vitual!!!
-        // or abstruct but the class need to be abstract to
-        public virtual void Speak() {
-            Console.WriteLine("The animal goes *brrr*");
-        }
-    }
 
 
-    class Dog : Animal {
-
-        public override void Speak()
-        {
-            Console.WriteLine("WOOF");
-        }
-    }
-
-    class Cat : Animal
-    {
-
-        public override void Speak()
-        {
-            Console.WriteLine("MEOW");
-        }
-    }
 }
